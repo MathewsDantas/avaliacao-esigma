@@ -1,0 +1,153 @@
+unit CalculadoraPas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    pnlCentralizar: TPanel;
+    btnSomar: TButton;
+    btnSubtrair: TButton;
+    btnMultiplicar: TButton;
+    btnDividir: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtNumero2: TEdit;
+    edtNumero1: TEdit;
+    lblResultado: TLabel;
+    lblTitulo: TLabel;
+    pnlPrincipal: TPanel;
+    lblOperacao: TLabel;
+    procedure btnSomarClick(Sender: TObject);
+    procedure btnSubtrairClick(Sender: TObject);
+    procedure btnMultiplicarClick(Sender: TObject);
+    procedure btnDividirClick(Sender: TObject);
+    procedure FormCanResize(Sender: TObject; var NewWidth, NewHeight: Integer;
+      var Resize: Boolean);
+    procedure edtNumero1KeyPress(Sender: TObject; var Key: Char);
+    procedure edtNumero2KeyPress(Sender: TObject; var Key: Char);
+    procedure ImprimirOperacao(operacao: char; Numero1, Numero2: Double);
+  private
+    function InputsMascara(out Key: Char): Boolean;
+    function InputsValidos(out Numero1, Numero2: Double): Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+function TForm1.InputsValidos(out Numero1, Numero2: Double): Boolean;
+begin
+  Result := False;
+  if (edtNumero1.Text = '') or (edtNumero2.Text = '') then
+  begin
+    lblResultado.Caption := 'Erro: Por favor, preencha ambos os números.';
+    Exit;
+  end;
+  try
+    Numero1 := StrToFloat(edtNumero1.Text);
+    Numero2 := StrToFloat(edtNumero2.Text);
+    Result := True;
+  except
+    on E: EConvertError do
+    begin
+      lblResultado.Caption := 'Erro: Números inválidos.';
+      Exit;
+    end;
+  end;
+end;
+
+function TForm1.InputsMascara(out Key: Char): Boolean;
+begin
+  if not (Key in ['0'..'9', #8, '.']) then
+  begin
+    lblResultado.Caption := 'Erro: Apenas números inteiros são permitidos.';
+    Key := #0;
+  end;
+end;
+
+procedure TForm1.ImprimirOperacao(operacao: char; Numero1, Numero2: Double);
+begin
+  lblOperacao.Caption := FloatToStr(Numero1) + operacao + FloatToStr(Numero2);
+end;
+
+procedure TForm1.btnDividirClick(Sender: TObject);
+var
+  Numero1, Numero2, Resultado: Double;
+begin
+  if InputsValidos(Numero1, Numero2) then
+  begin
+    if Numero2 <> 0 then
+    begin
+      Resultado := Numero1 / Numero2;
+      ImprimirOperacao('/',Numero1, Numero2);
+      lblResultado.Caption := 'Resultado: ' + FloatToStr(Resultado);
+    end
+    else
+      lblResultado.Caption := 'Erro: Divisão por zero';
+  end;
+end;
+
+procedure TForm1.btnMultiplicarClick(Sender: TObject);
+var
+  Numero1, Numero2, Resultado: Double;
+begin
+  if InputsValidos(Numero1, Numero2) then
+  begin
+    Resultado := Numero1 * Numero2;
+    ImprimirOperacao('*',Numero1, Numero2);
+    lblResultado.Caption := 'Resultado: ' + FloatToStr(Resultado);
+  end;
+end;
+
+procedure TForm1.btnSomarClick(Sender: TObject);
+var
+  Numero1, Numero2, Resultado: Double;
+begin
+  if InputsValidos(Numero1, Numero2) then
+  begin
+    Resultado := Numero1 + Numero2;
+    ImprimirOperacao('+',Numero1, Numero2);
+    lblResultado.Caption := 'Resultado: ' + FloatToStr(Resultado);
+  end;
+end;
+
+procedure TForm1.btnSubtrairClick(Sender: TObject);
+var
+  Numero1, Numero2, Resultado: Double;
+begin
+  if InputsValidos(Numero1, Numero2) then
+  begin
+    Resultado := Numero1 - Numero2;
+    ImprimirOperacao('-',Numero1, Numero2);
+    lblResultado.Caption := 'Resultado: ' + FloatToStr(Resultado);
+  end;
+end;
+
+procedure TForm1.edtNumero1KeyPress(Sender: TObject; var Key: Char);
+begin
+  InputsMascara(key)
+end;
+
+procedure TForm1.edtNumero2KeyPress(Sender: TObject; var Key: Char);
+begin
+  InputsMascara(key)
+end;
+
+procedure TForm1.FormCanResize(Sender: TObject; var NewWidth,
+  NewHeight: Integer; var Resize: Boolean);
+begin
+  pnlCentralizar.Top := (self.Height div 2) - (pnlCentralizar.Height div 2);
+  pnlCentralizar.Left := (self.Width div 2) - (pnlCentralizar.Width div 2) - 8;
+end;
+
+end.
+

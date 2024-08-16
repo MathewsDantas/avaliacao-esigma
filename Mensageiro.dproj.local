@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/08/16 00:01:32.000.429,=C:\Delphi\Unit2.pas</Transaction>
+    <Transaction>2024/08/16 20:01:19.685,=C:\Delphi\Unit2.pas</Transaction>
+    <Transaction>2024/08/16 20:01:58.263,C:\Delphi\Mensageiro.exe.dproj=C:\Delphi\Project1.dproj</Transaction>
+    <Transaction>2024/08/16 20:02:10.414,C:\Delphi\Mensageiro.dproj=C:\Delphi\Mensageiro.exe.dproj</Transaction>
+    <Transaction>2024/08/16 20:02:26.357,C:\Delphi\MensageiroPas.dfm=C:\Delphi\Unit2.dfm</Transaction>
+    <Transaction>2024/08/16 20:02:26.357,C:\Delphi\MensageiroPas.pas=C:\Delphi\Unit2.pas</Transaction>
+    <Transaction>2024/08/16 20:02:46.345,C:\Delphi\Esigma\MensageiroPas.dfm=C:\Delphi\MensageiroPas.dfm</Transaction>
+    <Transaction>2024/08/16 20:02:46.345,C:\Delphi\Esigma\MensageiroPas.pas=C:\Delphi\MensageiroPas.pas</Transaction>
+    <Transaction>2024/08/16 20:11:41.778,C:\Delphi\Esigma\Mensageiro.dproj=C:\Delphi\Mensageiro.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

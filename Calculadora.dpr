@@ -2,7 +2,7 @@ program Calculadora;
 
 uses
   Vcl.Forms,
-  AvaliacaoEsigma in 'AvaliacaoEsigma.pas' {Form1};
+  CalculadoraPas in 'CalculadoraPas.pas' {Form1};
 
 {$R *.res}
 

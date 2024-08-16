@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{765F1E37-CCD9-43E1-A717-A6FD7BEE663C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Calculadora.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Mensageiro.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Calculadora">
+        <MSBuild Projects="Calculadora.dproj"/>
+    </Target>
+    <Target Name="Calculadora:Clean">
+        <MSBuild Projects="Calculadora.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Calculadora:Make">
+        <MSBuild Projects="Calculadora.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Mensageiro">
+        <MSBuild Projects="Mensageiro.dproj"/>
+    </Target>
+    <Target Name="Mensageiro:Clean">
+        <MSBuild Projects="Mensageiro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Mensageiro:Make">
+        <MSBuild Projects="Mensageiro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Calculadora;Mensageiro"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Calculadora:Clean;Mensageiro:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Calculadora:Make;Mensageiro:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
