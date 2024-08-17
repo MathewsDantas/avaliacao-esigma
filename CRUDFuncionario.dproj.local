@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/08/17 11:42:30.000.017,=C:\Delphi\Unit4.pas</Transaction>
+    <Transaction>2024/08/17 11:42:48.000.055,C:\Delphi\Project1.dproj=C:\Delphi\CRUDFuncionario.dproj</Transaction>
+    <Transaction>2024/08/17 11:43:12.000.728,C:\Delphi\Unit4.dfm=C:\Delphi\CRUD.dfm</Transaction>
+    <Transaction>2024/08/17 11:43:12.000.728,C:\Delphi\Unit4.pas=C:\Delphi\CRUD.pas</Transaction>
+    <Transaction>2024/08/17 11:43:36.000.209,C:\Delphi\CRUD.dfm=C:\Delphi\Esigma\CRUD.dfm</Transaction>
+    <Transaction>2024/08/17 11:43:36.000.209,C:\Delphi\CRUD.pas=C:\Delphi\Esigma\CRUD.pas</Transaction>
+    <Transaction>2024/08/17 11:44:25.000.483,C:\Delphi\CRUDFuncionario.dproj=C:\Delphi\Esigma\CRUDFuncionario.dproj</Transaction>
+    <Transaction>2024/08/17 13:08:23.263,=C:\Delphi\Esigma\Unit1.pas</Transaction>
+    <Transaction>2024/08/17 15:40:15.345,C:\Delphi\Esigma\DataModule.dfm=C:\Delphi\Esigma\Unit1.dfm</Transaction>
+    <Transaction>2024/08/17 15:40:15.345,C:\Delphi\Esigma\DataModule.pas=C:\Delphi\Esigma\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

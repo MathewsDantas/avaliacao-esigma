@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 438
-  ClientWidth = 612
+  ClientHeight = 436
+  ClientWidth = 604
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object Form2: TForm2
   TextHeight = 15
   object pnlCentral: TPanel
     Left = 112
-    Top = 24
+    Top = 20
     Width = 400
     Height = 400
     BevelOuter = bvNone
@@ -26,9 +26,16 @@ object Form2: TForm2
       Height = 15
       Caption = 'Digite a mensagem'
     end
+    object lblError: TLabel
+      Left = 96
+      Top = 196
+      Width = 184
+      Height = 12
+      AutoSize = False
+    end
     object btnEnviar: TButton
-      Left = 192
-      Top = 202
+      Left = 205
+      Top = 212
       Width = 75
       Height = 25
       Caption = 'Enviar'

@@ -1,0 +1,49 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  Caption = 'Form4'
+  ClientHeight = 488
+  ClientWidth = 636
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 636
+    Height = 73
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 919
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 634
+      Height = 71
+      DataSource = DataModule1.DataSource1
+      VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh]
+      Align = alClient
+      TabOrder = 0
+      ExplicitWidth = 618
+      ExplicitHeight = 80
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 73
+    Width = 636
+    Height = 167
+    Align = alTop
+    DataSource = DataModule1.DataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+end

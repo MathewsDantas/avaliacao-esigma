@@ -9,6 +9,9 @@
         <Projects Include="Mensageiro.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="CRUDFuncionario.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="Mensageiro:Make">
         <MSBuild Projects="Mensageiro.dproj" Targets="Make"/>
     </Target>
+    <Target Name="CRUDFuncionario">
+        <MSBuild Projects="CRUDFuncionario.dproj"/>
+    </Target>
+    <Target Name="CRUDFuncionario:Clean">
+        <MSBuild Projects="CRUDFuncionario.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CRUDFuncionario:Make">
+        <MSBuild Projects="CRUDFuncionario.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Calculadora;Mensageiro"/>
+        <CallTarget Targets="Calculadora;Mensageiro;CRUDFuncionario"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Calculadora:Clean;Mensageiro:Clean"/>
+        <CallTarget Targets="Calculadora:Clean;Mensageiro:Clean;CRUDFuncionario:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Calculadora:Make;Mensageiro:Make"/>
+        <CallTarget Targets="Calculadora:Make;Mensageiro:Make;CRUDFuncionario:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

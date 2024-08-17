@@ -12,6 +12,7 @@ type
     lblMensagem: TLabel;
     pnlCentral: TPanel;
     edtMensagem: TMemo;
+    lblError: TLabel;
     procedure FormCanResize(Sender: TObject; var NewWidth, NewHeight: Integer;
       var Resize: Boolean);
     procedure btnEnviarClick(Sender: TObject);
@@ -33,6 +34,12 @@ uses Mensageiro2Pas;
 procedure TForm2.btnEnviarClick(Sender: TObject);
 begin
   Form3 := TForm3.Create(self);
+  Form2.lblError.Caption := '';
+  if (edtMensagem.Text = '') then
+  begin
+    Form2.lblError.Caption := 'Erro: Por favor, preencha o campo acima';
+    Exit;
+  end;
   try
     Form3.Mensagem := edtMensagem.Text;
     if Form3.ShowModal = mrOk then
