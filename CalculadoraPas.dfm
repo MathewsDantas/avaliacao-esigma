@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 398
-  ClientWidth = 585
+  ClientHeight = 399
+  ClientWidth = 589
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,14 +15,16 @@ object Form1: TForm1
   object pnlPrincipal: TPanel
     Left = 0
     Top = 0
-    Width = 585
-    Height = 398
+    Width = 589
+    Height = 399
     Align = alClient
     AutoSize = True
     BevelKind = bkSoft
     Color = clSkyBlue
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 585
+    ExplicitHeight = 398
     object pnlCentralizar: TPanel
       Left = -2
       Top = 52

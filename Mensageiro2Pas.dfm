@@ -1,0 +1,58 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 442
+  ClientWidth = 628
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCanResize = FormCanResize
+  OnShow = FormShow
+  TextHeight = 15
+  object pnlCentral: TPanel
+    Left = 112
+    Top = 26
+    Width = 400
+    Height = 400
+    BevelOuter = bvNone
+    TabOrder = 0
+    object lblMensagem: TLabel
+      Left = 136
+      Top = 96
+      Width = 62
+      Height = 15
+      Caption = 'Mensagem:'
+    end
+    object btnCancelar: TButton
+      Left = 88
+      Top = 264
+      Width = 75
+      Height = 25
+      Caption = 'Cancelar'
+      TabOrder = 0
+      OnClick = btnCancelarClick
+    end
+    object btnConfirmar: TButton
+      Left = 241
+      Top = 264
+      Width = 75
+      Height = 25
+      Caption = 'Confirmar'
+      TabOrder = 1
+      OnClick = btnConfirmarClick
+    end
+    object lblText: TMemo
+      Left = 112
+      Top = 144
+      Width = 185
+      Height = 89
+      ImeName = 'Portuguese (Brazilian ABNT)'
+      ScrollBars = ssVertical
+      TabOrder = 2
+    end
+  end
+end
