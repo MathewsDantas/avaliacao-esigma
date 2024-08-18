@@ -2,7 +2,7 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Form4'
-  ClientHeight = 611
+  ClientHeight = 634
   ClientWidth = 636
   Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
@@ -67,9 +67,15 @@ object Form4: TForm4
     Top = 149
     Width = 636
     Height = 204
+    Cursor = crHandPoint
     Align = alTop
     BorderStyle = bsNone
+    Ctl3D = True
     DataSource = DataModule1.DataSource1
+    DragCursor = crHandPoint
+    DrawingStyle = gdsGradient
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentCtl3D = False
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -79,9 +85,9 @@ object Form4: TForm4
   end
   object pnlCadastro: TPanel
     Left = 105
-    Top = 376
+    Top = 375
     Width = 400
-    Height = 227
+    Height = 210
     ParentBackground = False
     TabOrder = 2
     object Label3: TLabel
@@ -170,12 +176,13 @@ object Form4: TForm4
     end
     object pnlBotoes: TPanel
       Left = 1
-      Top = 194
+      Top = 177
       Width = 398
       Height = 32
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 4
+      ExplicitTop = 201
       object btnCancelar: TButton
         AlignWithMargins = True
         Left = 229
@@ -247,7 +254,7 @@ object Form4: TForm4
     TabOrder = 3
     ExplicitTop = 73
     object lblFilter: TLabel
-      Left = 24
+      Left = -32
       Top = 0
       Width = 364
       Height = 35
@@ -256,9 +263,28 @@ object Form4: TForm4
       AutoSize = False
       Color = clBtnFace
       ParentColor = False
-      ExplicitLeft = 20
-      ExplicitTop = -4
-      ExplicitHeight = 33
+      ExplicitLeft = 21
+      ExplicitTop = 2
+    end
+    object lblVerTodos: TLabel
+      AlignWithMargins = True
+      Left = 335
+      Top = 10
+      Width = 50
+      Height = 22
+      Margins.Top = 10
+      Align = alRight
+      Alignment = taCenter
+      Caption = 'Ver Todos'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsUnderline]
+      ParentFont = False
+      OnClick = lblVerTodosClick
+      ExplicitTop = 3
+      ExplicitHeight = 14
     end
     object edtFiltro: TEdit
       AlignWithMargins = True

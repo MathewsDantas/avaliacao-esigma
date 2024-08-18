@@ -82,10 +82,35 @@ object Form4: TForm4
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpf'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Width = 250
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_nascimento'
+        Width = 200
+        Visible = True
+      end>
   end
   object pnlCadastro: TPanel
-    Left = 105
-    Top = 375
+    Left = 129
+    Top = 378
     Width = 400
     Height = 210
     ParentBackground = False
@@ -263,8 +288,8 @@ object Form4: TForm4
       AutoSize = False
       Color = clBtnFace
       ParentColor = False
-      ExplicitLeft = 21
-      ExplicitTop = 2
+      ExplicitLeft = -35
+      ExplicitTop = 5
     end
     object lblVerTodos: TLabel
       AlignWithMargins = True

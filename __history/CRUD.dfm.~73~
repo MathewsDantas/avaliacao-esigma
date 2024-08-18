@@ -2,7 +2,7 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Form4'
-  ClientHeight = 611
+  ClientHeight = 634
   ClientWidth = 636
   Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
@@ -35,7 +35,7 @@ object Form4: TForm4
       ExplicitWidth = 326
       object btnCadastrar: TButton
         AlignWithMargins = True
-        Left = 255
+        Left = 381
         Top = 3
         Width = 120
         Height = 65
@@ -43,37 +43,8 @@ object Form4: TForm4
         Caption = 'Cadastrar'
         TabOrder = 0
         OnClick = btnCadastrarClick
-        ExplicitLeft = 307
-        ExplicitTop = 4
-        ExplicitHeight = 63
-      end
-      object btnDeletar: TButton
-        AlignWithMargins = True
-        Left = 129
-        Top = 3
-        Width = 120
-        Height = 65
-        Align = alRight
-        Caption = 'Deletar'
-        TabOrder = 1
-        OnClick = btnDeletarClick
-        ExplicitLeft = 169
-        ExplicitTop = 4
-        ExplicitHeight = 63
-      end
-      object btnEditar: TButton
-        AlignWithMargins = True
-        Left = 381
-        Top = 3
-        Width = 120
-        Height = 65
-        Align = alRight
-        Caption = 'Editar'
-        TabOrder = 2
-        OnClick = btnEditarClick
-        ExplicitLeft = 398
-        ExplicitTop = 4
-        ExplicitHeight = 63
+        ExplicitLeft = 39
+        ExplicitTop = 1
       end
     end
     object DBNavigator1: TDBNavigator
@@ -96,21 +67,51 @@ object Form4: TForm4
     Top = 149
     Width = 636
     Height = 204
+    Cursor = crHandPoint
     Align = alTop
     BorderStyle = bsNone
+    Ctl3D = True
     DataSource = DataModule1.DataSource1
+    DragCursor = crHandPoint
+    DrawingStyle = gdsGradient
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentCtl3D = False
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpf'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Width = 250
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_nascimento'
+        Width = 200
+        Visible = True
+      end>
   end
   object pnlCadastro: TPanel
-    Left = 105
-    Top = 376
+    Left = 129
+    Top = 378
     Width = 400
-    Height = 227
+    Height = 210
     ParentBackground = False
     TabOrder = 2
     object Label3: TLabel
@@ -197,25 +198,73 @@ object Form4: TForm4
       DataSource = DataModule1.DataSource1
       TabOrder = 3
     end
-    object btnSalvar: TButton
-      Left = 280
-      Top = 186
-      Width = 102
-      Height = 24
-      Caption = 'Salvar'
+    object pnlBotoes: TPanel
+      Left = 1
+      Top = 177
+      Width = 398
+      Height = 32
+      Align = alBottom
+      BevelOuter = bvNone
       TabOrder = 4
-      Visible = False
-      OnClick = btnSalvarClick
-    end
-    object btnCancelar: TButton
-      Left = 172
-      Top = 186
-      Width = 102
-      Height = 24
-      Caption = 'Cancelar'
-      TabOrder = 5
-      Visible = False
-      OnClick = btnCancelarClick
+      ExplicitTop = 201
+      object btnCancelar: TButton
+        AlignWithMargins = True
+        Left = 229
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Cancelar'
+        TabOrder = 0
+        Visible = False
+        OnClick = btnCancelarClick
+        ExplicitLeft = 262
+        ExplicitTop = 4
+        ExplicitHeight = 24
+      end
+      object btnSalvar: TButton
+        AlignWithMargins = True
+        Left = 315
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Salvar'
+        TabOrder = 1
+        Visible = False
+        OnClick = btnSalvarClick
+        ExplicitLeft = 324
+        ExplicitTop = 4
+        ExplicitHeight = 24
+      end
+      object btnEditar: TButton
+        AlignWithMargins = True
+        Left = 57
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Editar'
+        TabOrder = 2
+        OnClick = btnEditarClick
+        ExplicitLeft = -48
+        ExplicitTop = 4
+        ExplicitHeight = 33
+      end
+      object btnDeletar: TButton
+        AlignWithMargins = True
+        Left = 143
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Deletar'
+        TabOrder = 3
+        OnClick = btnDeletarClick
+        ExplicitLeft = 274
+        ExplicitTop = 4
+        ExplicitHeight = 33
+      end
     end
   end
   object lblFiltro: TPanel
@@ -229,7 +278,7 @@ object Form4: TForm4
     TabOrder = 3
     ExplicitTop = 73
     object lblFilter: TLabel
-      Left = 24
+      Left = -32
       Top = 0
       Width = 364
       Height = 35
@@ -238,9 +287,28 @@ object Form4: TForm4
       AutoSize = False
       Color = clBtnFace
       ParentColor = False
-      ExplicitLeft = 20
-      ExplicitTop = -4
-      ExplicitHeight = 33
+      ExplicitLeft = -35
+      ExplicitTop = 5
+    end
+    object lblVerTodos: TLabel
+      AlignWithMargins = True
+      Left = 335
+      Top = 10
+      Width = 50
+      Height = 22
+      Margins.Top = 10
+      Align = alRight
+      Alignment = taCenter
+      Caption = 'Ver Todos'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsUnderline]
+      ParentFont = False
+      OnClick = lblVerTodosClick
+      ExplicitTop = 3
+      ExplicitHeight = 14
     end
     object edtFiltro: TEdit
       AlignWithMargins = True
