@@ -3,10 +3,11 @@ object DataModule1: TDataModule1
   Width = 640
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'DriverID=PG'
-      'Password=123456'
-      'Database=esigma'
-      'User_Name=postgres')
+      'Password=P2fZUU5JzZowKPIeVoLXXxOw2KOqe5lv '
+      'Database=esigma_8jq8'
+      'User_Name=esigma_8jq8_user'
+      'Server=dpg-cr101jbtq21c73cmh5pg-a.oregon-postgres.render.com'
+      'DriverID=PG')
     Connected = True
     LoginPrompt = False
     Left = 88
