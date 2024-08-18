@@ -2,7 +2,7 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Form4'
-  ClientHeight = 481
+  ClientHeight = 634
   ClientWidth = 636
   Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
@@ -14,32 +14,68 @@ object Form4: TForm4
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
-    Top = 0
+    Top = 41
     Width = 636
     Height = 73
     Align = alTop
+    Alignment = taLeftJustify
+    ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 919
-    object DBNavigator1: TDBNavigator
+    ExplicitTop = 39
+    object pnlControle: TPanel
       Left = 1
       Top = 1
-      Width = 634
+      Width = 504
       Height = 71
-      DataSource = DataModule1.DataSource1
-      VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh]
       Align = alClient
+      AutoSize = True
+      BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 618
-      ExplicitHeight = 80
+      ExplicitLeft = 185
+      ExplicitWidth = 326
+      object btnCadastrar: TButton
+        AlignWithMargins = True
+        Left = 381
+        Top = 3
+        Width = 120
+        Height = 65
+        Align = alRight
+        Caption = 'Cadastrar'
+        TabOrder = 0
+        OnClick = btnCadastrarClick
+        ExplicitLeft = 39
+        ExplicitTop = 1
+      end
+    end
+    object DBNavigator1: TDBNavigator
+      AlignWithMargins = True
+      Left = 508
+      Top = 4
+      Width = 124
+      Height = 65
+      DataSource = DataModule1.DataSource1
+      VisibleButtons = [nbRefresh]
+      Align = alRight
+      TabOrder = 1
+      ExplicitLeft = 512
+      ExplicitTop = 0
+      ExplicitHeight = 71
     end
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 73
+    Top = 149
     Width = 636
-    Height = 167
+    Height = 204
+    Cursor = crHandPoint
     Align = alTop
+    BorderStyle = bsNone
+    Ctl3D = True
     DataSource = DataModule1.DataSource1
+    DragCursor = crHandPoint
+    DrawingStyle = gdsGradient
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentCtl3D = False
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -47,24 +83,16 @@ object Form4: TForm4
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
-  object Panel2: TPanel
-    Left = 114
-    Top = 260
+  object pnlCadastro: TPanel
+    Left = 105
+    Top = 375
     Width = 400
-    Height = 200
+    Height = 210
     ParentBackground = False
     TabOrder = 2
-    object Label2: TLabel
-      Left = 144
-      Top = 16
-      Width = 21
-      Height = 15
-      Caption = 'CPF'
-      FocusControl = DBEdit2
-    end
     object Label3: TLabel
       Left = 16
-      Top = 80
+      Top = 104
       Width = 33
       Height = 15
       Caption = 'Nome'
@@ -72,7 +100,7 @@ object Form4: TForm4
     end
     object Label4: TLabel
       Left = 16
-      Top = 16
+      Top = 40
       Width = 39
       Height = 15
       Caption = 'C'#243'digo'
@@ -80,48 +108,229 @@ object Form4: TForm4
     end
     object Label5: TLabel
       Left = 280
-      Top = 16
+      Top = 40
       Width = 96
       Height = 15
       Caption = 'Dt. de nascimento'
       FocusControl = DBEdit6
     end
-    object DBEdit2: TDBEdit
+    object Label1: TLabel
       Left = 144
-      Top = 37
-      Width = 100
-      Height = 23
-      DataField = 'cpf'
-      DataSource = DataModule1.DataSource1
-      TabOrder = 0
+      Top = 40
+      Width = 21
+      Height = 15
+      Caption = 'CPF'
+      FocusControl = DBEdit2
+    end
+    object Label2: TLabel
+      Left = 16
+      Top = 8
+      Width = 73
+      Height = 17
+      Caption = 'Funcion'#225'rio'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
     end
     object DBEdit3: TDBEdit
       Left = 16
-      Top = 101
+      Top = 125
       Width = 364
       Height = 23
       DataField = 'nome'
       DataSource = DataModule1.DataSource1
-      TabOrder = 1
+      TabOrder = 0
     end
     object DBEdit4: TDBEdit
       Left = 16
-      Top = 37
+      Top = 61
       Width = 100
       Height = 23
       DataField = 'codigo'
       DataSource = DataModule1.DataSource1
       Enabled = False
-      TabOrder = 2
+      TabOrder = 1
     end
     object DBEdit6: TDBEdit
-      Left = 280
-      Top = 37
+      Left = 279
+      Top = 61
       Width = 100
       Height = 23
       DataField = 'data_nascimento'
       DataSource = DataModule1.DataSource1
+      TabOrder = 2
+      OnKeyPress = DBEdit6KeyPress
+    end
+    object DBEdit2: TDBEdit
+      Left = 144
+      Top = 61
+      Width = 100
+      Height = 23
+      AutoSize = False
+      DataField = 'cpf'
+      DataSource = DataModule1.DataSource1
       TabOrder = 3
     end
+    object pnlBotoes: TPanel
+      Left = 1
+      Top = 177
+      Width = 398
+      Height = 32
+      Align = alBottom
+      BevelOuter = bvNone
+      TabOrder = 4
+      ExplicitTop = 201
+      object btnCancelar: TButton
+        AlignWithMargins = True
+        Left = 229
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Cancelar'
+        TabOrder = 0
+        Visible = False
+        OnClick = btnCancelarClick
+        ExplicitLeft = 262
+        ExplicitTop = 4
+        ExplicitHeight = 24
+      end
+      object btnSalvar: TButton
+        AlignWithMargins = True
+        Left = 315
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Salvar'
+        TabOrder = 1
+        Visible = False
+        OnClick = btnSalvarClick
+        ExplicitLeft = 324
+        ExplicitTop = 4
+        ExplicitHeight = 24
+      end
+      object btnEditar: TButton
+        AlignWithMargins = True
+        Left = 57
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Editar'
+        TabOrder = 2
+        OnClick = btnEditarClick
+        ExplicitLeft = -48
+        ExplicitTop = 4
+        ExplicitHeight = 33
+      end
+      object btnDeletar: TButton
+        AlignWithMargins = True
+        Left = 143
+        Top = 3
+        Width = 80
+        Height = 26
+        Align = alRight
+        Caption = 'Deletar'
+        TabOrder = 3
+        OnClick = btnDeletarClick
+        ExplicitLeft = 274
+        ExplicitTop = 4
+        ExplicitHeight = 33
+      end
+    end
+  end
+  object lblFiltro: TPanel
+    Left = 0
+    Top = 114
+    Width = 636
+    Height = 35
+    Align = alTop
+    BevelOuter = bvNone
+    ParentBackground = False
+    TabOrder = 3
+    ExplicitTop = 73
+    object lblFilter: TLabel
+      Left = -32
+      Top = 0
+      Width = 364
+      Height = 35
+      Align = alRight
+      Alignment = taCenter
+      AutoSize = False
+      Color = clBtnFace
+      ParentColor = False
+      ExplicitLeft = 21
+      ExplicitTop = 2
+    end
+    object lblVerTodos: TLabel
+      AlignWithMargins = True
+      Left = 335
+      Top = 10
+      Width = 50
+      Height = 22
+      Margins.Top = 10
+      Align = alRight
+      Alignment = taCenter
+      Caption = 'Ver Todos'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsUnderline]
+      ParentFont = False
+      OnClick = lblVerTodosClick
+      ExplicitTop = 3
+      ExplicitHeight = 14
+    end
+    object edtFiltro: TEdit
+      AlignWithMargins = True
+      Left = 391
+      Top = 3
+      Width = 161
+      Height = 29
+      Align = alRight
+      BevelOuter = bvNone
+      TabOrder = 0
+      Text = 'Insira o C'#243'digo ou Nome'
+      OnClick = edtFiltroClick
+      ExplicitLeft = 399
+      ExplicitTop = 34
+      ExplicitHeight = 33
+    end
+    object btnFiltro: TButton
+      AlignWithMargins = True
+      Left = 558
+      Top = 3
+      Width = 75
+      Height = 29
+      Align = alRight
+      Caption = 'Filtrar'
+      TabOrder = 1
+      OnClick = btnFiltroClick
+      ExplicitLeft = 548
+      ExplicitTop = 5
+      ExplicitHeight = 24
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 636
+    Height = 41
+    Align = alTop
+    Caption = 'Gerenciamento de Funcion'#225'rios'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 4
+    ExplicitTop = -16
   end
 end

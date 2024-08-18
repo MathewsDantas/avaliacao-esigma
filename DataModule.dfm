@@ -12,40 +12,46 @@ object DataModule1: TDataModule1
     Left = 88
     Top = 72
   end
-  object FDQuery1: TFDQuery
+  object tbFuncionarios: TFDQuery
     Active = True
+    Filtered = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT * FROM funcionarios')
     Left = 88
     Top = 168
-    object FDQuery1id: TGuidField
+    object tbFuncionariosid: TGuidField
+      DisplayWidth = 24
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Size = 38
     end
-    object FDQuery1cpf: TWideStringField
+    object tbFuncionarioscodigo: TIntegerField
+      DisplayWidth = 16
+      FieldName = 'codigo'
+      Origin = 'codigo'
+    end
+    object tbFuncionarioscpf: TWideStringField
+      DisplayWidth = 77
       FieldName = 'cpf'
       Origin = 'cpf'
       Size = 11
     end
-    object FDQuery1nome: TWideStringField
+    object tbFuncionariosnome: TWideStringField
+      DisplayWidth = 255
       FieldName = 'nome'
       Origin = 'nome'
       Size = 255
     end
-    object FDQuery1codigo: TIntegerField
-      FieldName = 'codigo'
-      Origin = 'codigo'
-    end
-    object FDQuery1data_nascimento: TDateField
+    object tbFuncionariosdata_nascimento: TDateField
+      DisplayWidth = 63
       FieldName = 'data_nascimento'
       Origin = 'data_nascimento'
     end
   end
   object DataSource1: TDataSource
-    DataSet = FDQuery1
+    DataSet = tbFuncionarios
     Left = 88
     Top = 256
   end

@@ -13,15 +13,15 @@ uses
 type
   TDataModule1 = class(TDataModule)
     FDConnection1: TFDConnection;
-    FDQuery1: TFDQuery;
+    tbFuncionarios: TFDQuery;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     DataSource1: TDataSource;
     FDPhysPgDriverLink1: TFDPhysPgDriverLink;
-    FDQuery1id: TGuidField;
-    FDQuery1codigo: TIntegerField;
-    FDQuery1nome: TWideStringField;
-    FDQuery1cpf: TWideStringField;
-    FDQuery1data_nascimento: TDateField;
+    tbFuncionariosid: TGuidField;
+    tbFuncionarioscodigo: TIntegerField;
+    tbFuncionariosnome: TWideStringField;
+    tbFuncionarioscpf: TWideStringField;
+    tbFuncionariosdata_nascimento: TDateField;
   private
     { Private declarations }
   public
