@@ -3,13 +3,13 @@
         <ProjectGuid>{765F1E37-CCD9-43E1-A717-A6FD7BEE663C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="Calculadora.dproj">
+        <Projects Include="Calculadora\Calculadora.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Mensageiro.dproj">
+        <Projects Include="CRUDFuncionario\CRUDFuncionario.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="CRUDFuncionario.dproj">
+        <Projects Include="Mensageiro\Mensageiro.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -21,40 +21,40 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="Calculadora">
-        <MSBuild Projects="Calculadora.dproj"/>
+        <MSBuild Projects="Calculadora\Calculadora.dproj"/>
     </Target>
     <Target Name="Calculadora:Clean">
-        <MSBuild Projects="Calculadora.dproj" Targets="Clean"/>
+        <MSBuild Projects="Calculadora\Calculadora.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Calculadora:Make">
-        <MSBuild Projects="Calculadora.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Mensageiro">
-        <MSBuild Projects="Mensageiro.dproj"/>
-    </Target>
-    <Target Name="Mensageiro:Clean">
-        <MSBuild Projects="Mensageiro.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Mensageiro:Make">
-        <MSBuild Projects="Mensageiro.dproj" Targets="Make"/>
+        <MSBuild Projects="Calculadora\Calculadora.dproj" Targets="Make"/>
     </Target>
     <Target Name="CRUDFuncionario">
-        <MSBuild Projects="CRUDFuncionario.dproj"/>
+        <MSBuild Projects="CRUDFuncionario\CRUDFuncionario.dproj"/>
     </Target>
     <Target Name="CRUDFuncionario:Clean">
-        <MSBuild Projects="CRUDFuncionario.dproj" Targets="Clean"/>
+        <MSBuild Projects="CRUDFuncionario\CRUDFuncionario.dproj" Targets="Clean"/>
     </Target>
     <Target Name="CRUDFuncionario:Make">
-        <MSBuild Projects="CRUDFuncionario.dproj" Targets="Make"/>
+        <MSBuild Projects="CRUDFuncionario\CRUDFuncionario.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Mensageiro">
+        <MSBuild Projects="Mensageiro\Mensageiro.dproj"/>
+    </Target>
+    <Target Name="Mensageiro:Clean">
+        <MSBuild Projects="Mensageiro\Mensageiro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Mensageiro:Make">
+        <MSBuild Projects="Mensageiro\Mensageiro.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Calculadora;Mensageiro;CRUDFuncionario"/>
+        <CallTarget Targets="Calculadora;CRUDFuncionario;Mensageiro"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Calculadora:Clean;Mensageiro:Clean;CRUDFuncionario:Clean"/>
+        <CallTarget Targets="Calculadora:Clean;CRUDFuncionario:Clean;Mensageiro:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Calculadora:Make;Mensageiro:Make;CRUDFuncionario:Make"/>
+        <CallTarget Targets="Calculadora:Make;CRUDFuncionario:Make;Mensageiro:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

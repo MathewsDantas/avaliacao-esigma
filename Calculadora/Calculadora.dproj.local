@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/08/15 21:17:50.000.664,=C:\Delphi\Unit1.pas</Transaction>
+    <Transaction>2024/08/15 21:26:45.000.655,C:\Delphi\Unit1.pas=C:\Delphi\Esigma\AvaliacaoEsigma.pas</Transaction>
+    <Transaction>2024/08/15 21:26:45.000.655,C:\Delphi\Unit1.dfm=C:\Delphi\Esigma\AvaliacaoEsigma.dfm</Transaction>
+    <Transaction>2024/08/15 21:26:51.000.347,C:\Delphi\Project1.dproj=C:\Delphi\Esigma\Calculadora.dproj</Transaction>
+    <Transaction>2024/08/15 23:59:59.000.634,C:\Delphi\Esigma\Calculadora.pas=C:\Delphi\Esigma\AvaliacaoEsigma.pas</Transaction>
+    <Transaction>2024/08/15 23:59:59.000.634,C:\Delphi\Esigma\Calculadora.dfm=C:\Delphi\Esigma\AvaliacaoEsigma.dfm</Transaction>
+    <Transaction>2024/08/16 00:00:49.000.875,C:\Delphi\Esigma\CalculadoraPas.dfm=C:\Delphi\Esigma\Calculadora.dfm</Transaction>
+    <Transaction>2024/08/16 00:00:49.000.875,C:\Delphi\Esigma\CalculadoraPas.pas=C:\Delphi\Esigma\Calculadora.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="CalculadoraPas.pas"/>
+    <File Path="CalculadoraPas.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
